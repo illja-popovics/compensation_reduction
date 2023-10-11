@@ -1,6 +1,8 @@
 # Function to check if the case is valid based on the delay on arrival/ departure
 
 def check_if_valid(problem:str, departure_delay:int, arrival_delay:int, notification:str) -> bool:
+    if notification not in ["0", "<7", "8-14"]:
+         return False
     if (departure_delay >= -100 and notification == "<7") or (departure_delay >= -200 and notification == "8-14"):
         return True # Case valid, we first check if the flight was brought forward 
     if problem == "delay" and arrival_delay < 300:
@@ -18,9 +20,12 @@ def check_reduction(distance:int, departure_delay:str, arrival_delay:str) -> boo
         return True # 50% reduction       
             
 # Not sure if we need to format the delay time if its type is string (e.g."03:10"). 
-# Following code can be added into both functions to convert into integer
+# Following code can be added into both functions to convert departure_delay, arrival_delay into integer:
 # arrival_delay = int(arrival_delay.replace(":", ""))
 # departure_delay = int(departure_delay.replace(":", ""))
+
+# problem should be in ["delay", "cancelation", "denied boarding"]
+# notification should be in ["0", "<7", "8-14"]
 
 # example of the implementation
 # Variables for the functions: 
