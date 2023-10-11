@@ -24,8 +24,8 @@ def check_reduction(distance:int, departure_delay:str, arrival_delay:str) -> boo
 # arrival_delay = int(arrival_delay.replace(":", ""))
 # departure_delay = int(departure_delay.replace(":", ""))
 
-# problem should be in ["delay", "cancelation", "denied boarding"]
-# notification should be in ["0", "<7", "8-14"]
+# problem assumed to be in ["delay", "cancelation", "denied boarding"]
+# notification assumed to be in ["0", "<7", "8-14"]
 
 # example of the implementation
 # Variables for the functions: 
